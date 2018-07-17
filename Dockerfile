@@ -4,9 +4,7 @@ ADD https://github.com/google/protobuf/releases/download/v3.5.1/protobuf-python-
 RUN tar -zxvf protobuf-python-3.5.1.tar.gz
 RUN cd protobuf-3.5.1
 RUN ./configure --prefix=/usr/local/protobuf
-RUN make
-RUN make check
-RUN make install
+RUN make && make check && make install
 RUN ldconfig
 RUN cd python
 RUN python setup.py build
