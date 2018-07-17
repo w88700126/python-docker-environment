@@ -3,8 +3,7 @@ RUN yum update -y && yum install -y epel-release make gcc gcc-c++ libffi-devel p
 ADD https://github.com/google/protobuf/releases/download/v3.5.1/protobuf-python-3.5.1.tar.gz /
 RUN tar -zxvf protobuf-python-3.5.1.tar.gz 
 RUN cd protobuf-3.5.1
-RUN ./autogen.sh
-RUN ./configure --prefix=/usr/local/protobuf --disable-shared --with-pic
+RUN ./configure --prefix=/usr/local/protobuf
 RUN make && make check && make install
 RUN ldconfig
 RUN cd python
